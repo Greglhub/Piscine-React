@@ -1,4 +1,3 @@
-// Formulaire.js
 import React, { useState } from 'react';
 import { View, StyleSheet, ImageBackground } from 'react-native';
 import { TextInput, Button } from 'react-native-paper';
@@ -21,41 +20,54 @@ const Formulaire = () => {
   };
 
   return (
-    <ImageBackground source={require('C:\Users\grego\OneDrive\ESTIAM\E4\Piscine-React\Foret.jpg')} style={styles.backgroundImage}>
-      <View style={styles.container}>
-        <TextInput
-          label="Nom"
-          value={nom}
-          onChangeText={text => setNom(text)}
-        />
-        <TextInput
-          label="Prénom"
-          value={prenom}
-          onChangeText={text => setPrenom(text)}
-        />
-        <TextInput
-          label="Email"
-          value={email}
-          onChangeText={text => setEmail(text)}
-          keyboardType="email-address"
-        />
-        <TextInput
-          label="Mot de passe"
-          value={password}
-          onChangeText={text => setPassword(text)}
-          secureTextEntry
-        />
-        <TextInput
-          label="Confirmation du mot de passe"
-          value={confirmPassword}
-          onChangeText={text => setConfirmPassword(text)}
-          secureTextEntry
-        />
-        <Button mode="contained" onPress={handlePress} style={styles.button}>
-          Faire le café ☕
-        </Button>
-      </View>
-    </ImageBackground>
+    <View style={styles.container}>
+      <TextInput
+        label="Nom"
+        value={nom}
+        onChangeText={text => setNom(text)}
+        style={styles.input}
+        theme={{ colors: { primary: 'grey' } }}
+      />
+      <TextInput
+        label="Prénom"
+        value={prenom}
+        onChangeText={text => setPrenom(text)}
+        style={styles.input}
+        theme={{ colors: { primary: 'grey' } }}
+      />
+      <TextInput
+        label="Email"
+        value={email}
+        onChangeText={text => setEmail(text)}
+        keyboardType="email-address"
+        style={styles.input}
+        theme={{ colors: { primary: 'grey' } }}
+      />
+      <TextInput
+        label="Mot de passe"
+        value={password}
+        onChangeText={text => setPassword(text)}
+        secureTextEntry
+        style={styles.input}
+        theme={{ colors: { primary: 'grey' } }}
+      />
+      <TextInput
+        label="Confirmation du mot de passe"
+        value={confirmPassword}
+        onChangeText={text => setConfirmPassword(text)}
+        secureTextEntry
+        style={styles.input}
+        theme={{ colors: { primary: 'grey' } }}
+      />
+      <Button
+        mode="contained"
+        onPress={handlePress}
+        style={styles.button}
+        theme={{ colors: { primary: 'green' } }}
+      >
+        Rentre dans la foret 
+      </Button>
+    </View>
   );
 };
 
@@ -67,6 +79,11 @@ const styles = StyleSheet.create({
   },
   container: {
     padding: 16,
+  },
+  input: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    fontStyle: 'italic',
   },
   button: {
     marginTop: 16,
