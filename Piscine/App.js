@@ -1,27 +1,29 @@
 import React from 'react';
-import { ImageBackground, StyleSheet } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import { Provider as PaperProvider } from 'react-native-paper';
-import CustomButton from './components/Bouton';
-import MyComponentWithState from './components/MyComponentWithState';
-import HomeScreen from './screen/home.screen'; 
-import Formulaire from './components/Register';
+import HomeScreen from './screen/home.screen';
+import LoginScreen from './screen/Login';
+import DashboardScreen from './screen/Dashboard';
+
+const Stack = createStackNavigator();
 
 const App = () => {
   return (
     <PaperProvider>
-      <ImageBackground source={require('./assets/Foret.jpg')} style={styles.backgroundImage}>
-        <HomeScreen /> 
-        <Formulaire />
-      </ImageBackground>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="Home">
+          <Stack.Screen
+            name="Forêt"
+            component={HomeScreen}
+            options={{ headerShown: false }} 
+          />
+          <Stack.Screen name="Login" component={LoginScreen} />
+          <Stack.Screen name="Dashboard" component={DashboardScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
     </PaperProvider>
   );
 };
-
-const styles = StyleSheet.create({
-  backgroundImage: {
-    flex: 1,
-    resizeMode: 'cover', // ou 'stretch' selon tes préférences
-  },
-});
 
 export default App;
