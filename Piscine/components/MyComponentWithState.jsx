@@ -12,7 +12,7 @@ const MyComponent = () => {
     <PaperProvider>
       <Portal>
         <Modal visible={visible} onDismiss={hideModal} contentContainerStyle={containerStyle}>
-          <Text>Example Modal.  Click outside this area to dismiss.</Text>
+          <Text>Clic autre part pour faire disparaitre</Text>
         </Modal>
       </Portal>
       <Button style={{marginTop: 30}} onPress={showModal}>

@@ -1,17 +1,21 @@
 import React from 'react';
-import Button from './components/Bouton';
-import { Modal } from 'react-native-paper';
 import { Provider as PaperProvider } from 'react-native-paper';
+import CustomButton from './components/Bouton';
+import MyComponentWithState from './components/MyComponentWithState';
+import HomeScreen from './screen/home.screen'; 
+import Formulaire from './components/Register';
 
 
+const App = () => {
 
-const App = () => (
-  <Button
-    label="Press me"
-    icon="camera"
-    mode="contained"
-    onPress={() => console.log('Pressed')}
-  />
-);
+  return (
+    <PaperProvider>
+      <HomeScreen /> 
+      <Formulaire />
+
+    </PaperProvider>
+  );
+};
+
 
 export default App;
